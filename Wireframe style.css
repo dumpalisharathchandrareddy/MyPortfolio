@@ -1,0 +1,439 @@
+/* General Styles */
+* {
+
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+header .logo {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li a:hover {
+    color: #ffe600;
+}
+
+/* Responsive Design for smaller devices */
+@media (max-width: 768px) {
+    header nav ul {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+    
+    header nav ul li {
+        display: inline-block; /* Display items inline */
+        width: 30%; /* Each item takes up 30% of the container width */
+        text-align: center;
+        margin: 5px 1%; /* Small margin for spacing */
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, #007bff 40%, #5aafe8); /* Gradient background */
+    color: #f0f4f8; /* Soft white text color */
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    color: #ffd700; 
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero p {
+    color: #ffe600; 
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.hero .cta {
+    background-color: white; /* Default button background */
+    color: #007bff; 
+    padding: 15px 30px;
+    margin-top: 30px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.hero .cta:hover {
+    background-color: #00d2ff; /* Light cyan hover background */
+    color: white; /* White text on hover */
+    font-weight: bold;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* About and Skills Section */
+.about-skills {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about, .skills {
+    width: 45%; /* Adjusted width for two-column layout */
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1%;
+}
+
+.about img {
+    width: 160px; /* Make the image responsive */
+    height: 160px; /* Maintain the aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.about h3 {
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff; /* Matches the theme */
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills ul li {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about, .skills {
+        width: 100%; /* Each section takes full width on smaller screens */
+        margin: 10px 0; /* Adjust margin for visual spacing on small devices */
+    }
+
+    .about img {
+        width: 120px; /* Adjust the image size on smaller screens */
+        height: 120px;
+    }
+}
+
+/* Projects Section */
+.projects {
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.project {
+    width: 31%; /* Three projects side by side on larger screens */
+    display: inline-block;
+    background-color: white;
+    padding: 20px;
+    margin: 10px 1%; /* Space between the tiles */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    vertical-align: top; /* Align the tiles to the top */
+}
+
+.project img {
+    width: 100%; /* Make the images responsive */
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Media Query for Smaller Screens (Two tiles per row) */
+@media (max-width: 768px) {
+    .project {
+        width: 48%; /* Two projects side by side */
+        margin: 10px 1%;
+    }
+}
+
+/* Media Query for Mobile Screens (Stack tiles vertically) */
+@media (max-width: 480px) {
+    .project {
+        width: 100%; /* Full width for each tile */
+        margin: 10px 0;
+    }
+}
+
+.project p {
+    min-height: 80px; /* Minimum height for the description to ensure uniformity */
+}
+
+/* Certifications and Experience Section */
+.cert-exp {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.certificates, .experience {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1%;
+}
+
+.certificate, .experience-details {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+.certificates h3, .experience h3 {
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.certificate p, .experience-details p {
+    min-height: 45px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .certificates, .experience {
+        width: 100%; /* Make each column full width on small screens */
+        margin: 10px 0;
+    }
+}
+
+/* Education Section */
+.education {
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.education-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.education-tile {
+    width: 31%;
+    display: inline-block;
+    background-color: white;
+    padding: 20px;
+    margin: 10px 1%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    vertical-align: top;
+    min-height: 200px;
+}
+
+.education-tile h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 768px) {
+    .education-tile {
+        width: 48%; /* Two tiles per row for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .education-tile {
+        width: 100%; /* One tile per row for small screens */
+    }
+}
+
+/* Blogs and Contact Form Section */
+.blogs-contact {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.blogs, .contact {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1%;
+}
+
+.blog-post {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post a.read-more {
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.blog-post a.read-more:hover {
+    background-color: #0056b3;
+}
+
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blogs, .contact {
+        width: 100%; /* Make each section full width for better mobile responsiveness */
+        display: block; /* Stack the sections */
+        margin: 10px 0;
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #5aafe8;
+}
+
+/* Go to Top Button Styling */
+.go-to-top {
+    position: fixed; /* Stays in place when scrolling */
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0.8;
+    z-index: 1000;
+}
+
+.go-to-top:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+    opacity: 1;
+}
+
+/* Smaller Button on Mobile Devices */
+@media (max-width: 768px) {
+    .go-to-top {
+        padding: 10px 15px;
+        font-size: 14px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
