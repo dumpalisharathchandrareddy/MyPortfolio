@@ -4,48 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharath Chandra Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style again.css">
 </head>
 <body>
-    <a id="top"></a>
+
+    <!-- Go to Top button which references to the top of the page -->
+    <a id="top-anchor"></a>
 
     <!-- Header Section -->
     <header>
-
-        <div class="container">
-            <div class="logo">Sharath Chandra's Portfolio</div>
+        <div class="page-wrapper">
+            <div class="portfolio-header">Sharath Chandra's Portfolio</div>
             <nav>
                 <ul>
-                    <li><a href="#about-me">About Me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about-me-section">About Me</a></li>
+                    <li><a href="#skills-section">Skills</a></li>
+                    <li><a href="#project-section">Projects</a></li>
+                    <li><a href="#certifications-section">Certifications</a></li>
+                    <li><a href="#experience-section">Experience</a></li>
+                    <li><a href="#education-section-class">Education</a></li>
+                    <li><a href="#blogs-section">Blogs</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Main Section which highlights my profile and it takes to Github to explore My projects -->
+    <section class="Main-section" id="Main-section" >
+        <div class="Main-section-class" id="Main-section-class">
         <h1>Welcome to Sharath's Portfolio</h1>
         <p>Explore my journey from mobile app development to machine learning.</p>
-        <a href="https://github.com/dumpalisharathchandrareddy" class="cta" target="_blank" rel="noopener noreferrer">Explore My Projects</a>
+        <a class="Go-to-git" href="https://github.com/dumpalisharathchandrareddy" target="_blank">Explore My Projects</a>
+    </div>
     </section>
 
     <!-- About and Skills Section -->
-    <section class="about-skills">
-        <div class="about" id="about-me">
+    <section class="about-skills-section">
+        <div class="about-section" id="about-me-section">
             <h2>About Me</h2>
             <img src="images/profile.jpg" alt="Profile Picture">
             <h3>Sharath Chandra Reddy Dumpali</h3>
             <p>I am a Computer Science Engineer with experience in machine learning and mobile app development.</p>
         </div>
-        <div class="skills" id="skills">
+        <div class="skills-section" id="skills-section">
             <h2>Skills</h2>
             <ul>
                 <li>Python</li>
@@ -58,20 +60,20 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <div class="project-container">
-            <div class="project">
+    <section class="projects-section">   
+        <div class="project-section" id="project-section">
+            <h2>Projects</h2>
+            <div class="project-item">
                 <img src="images/profile.jpeg" alt="Project 1">
                 <h3>Task Reminder Application</h3>
                 <p>Designed and developed a task reminder application using Flutter.</p>
             </div>
-            <div class="project">
+            <div class="project-item">
                 <img src="images/profile.jpeg" alt="Project 2">
                 <h3>Human Activity Recognition</h3>
                 <p>Used machine learning techniques to recognize human activity via smartphone sensors.</p>
             </div>
-            <div class="project">
+            <div class="project-item">
                 <img src="images/profile.jpeg" alt="Project 3">
                 <h3>Weather Forecast App</h3>
                 <p>Developed a cross-platform weather forecast app using Flutter and API integration.</p>
@@ -80,66 +82,64 @@
     </section>
 
     <!-- Certifications and Experience Section -->
-    <section class="cert-exp">
-        <div class="certificates" id="certifications">
+    <section class="certifications-experience-section">
+        <div class="certifications-section" id="certifications-section">
             <h3>Certifications</h3>
-            <div class="certificate">
+            <div class="certification-item">
                 <p>Machine Learning Training at SmartBridge</p>
             </div>
-            <div class="certificate">
+            <div class="certification-item">
                 <p>Flutter Development Program</p>
             </div>
         </div>
-        <div class="experience" id="experience">
+        <div class="experience-section" id="experience-section">
             <h3>Experience</h3>
-            <div class="experience-details">
+            <div class="experience-item">
                 <p>Worked on an E-commerce application project using Flutter at Flipkart Grid.</p>
             </div>
-            <div class="experience-details">
+            <div class="experience-item">
                 <p>Participated in R-Programming Training at MSME Technology Development Centre.</p>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section class="education" id="education">
-        <h2>Education</h2>
-        <div class="education-container">
-            <div class="education-tile">
+    <section class="education-section" id="education-section">       
+        <div class="education-section-class" id="education-section-class">
+            <h2>Education</h2>
+            <div class="education-item">
                 <h3>2024 - 2025</h3>
-                <p>Master of Science in Computer Science (Expected), University of New Haven.</p>
+                <p>Master of Science in Computer Science (Expected 2025), University of New Haven.</p>
             </div>
-            <div class="education-tile">
+            <div class="education-item">
                 <h3>2019 - 2023</h3>
                 <p>Bachelor of Technology in Computer Science, Sathyabama Institute of Science and Tech.</p>
             </div>
-            <div class="education-tile">
+            <div class="education-item">
                 <h3>2017 - 2019</h3>
-                <p>Completed Intermediate Education at Narayana Junior College.</p>
+                <p>Completed Intermediate Education at Narayana Junior College(IIT Campus, Hyderabad).</p>
             </div>
-
-
         </div>
     </section>
 
     <!-- Blogs and Contact Form Section -->
-    <section class="blogs-contact">
-        <div class="blogs" id="blogs">
+    <section class="blogs-contact-section">
+        <div class="blogs-section" id="blogs-section">
             <h2>Blogs</h2>
-            <div class="blog-post">
+            <div class="blog-item">
                 <h3>Understanding Data Science</h3>
                 <p>A blog post discussing the tools and skills required to excel in data science.</p>
                 <a href="https://www.blog.trainindata.com/data-science-fundamentals/" target="_blank">Read More</a>
             </div>
-            <div class="blog-post">
+            <div class="blog-item">
                 <h3>Building Mobile Applications with Flutter</h3>
                 <p>Insights on building cross-platform mobile apps using Flutter.</p>
                 <a href="https://medium.com/@csharath301/building-mobile-apps-with-flutter-a-game-changer-for-cross-platform-development-b319de50ba4f" target="_blank">Read More</a>
             </div>
         </div>
-        <div class="contact" id="contact">
+        <div class="contact-section" id="contact-section">
             <h2>Contact Me</h2>
-            <div class="contact-form">
+            <div class="contact-form-tile">
                 <form action="https://formspree.io/f/xyzgqjva" target="_blank" method="POST">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -150,17 +150,12 @@
         </div>
     </section>
 
-
-
     <!-- Footer Section -->
     <footer>
-        
-        <p>Connect with me on <a href="https://www.linkedin.com/in/sharathdumpali/" target="_blank">LinkedIn</a> or <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sdump1@unh.newhaven.edu" target="_blank">Email</a>.</p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/sharathdumpali/" target="_blank">LinkedIn</a> or <a href="mailto:sdump1@unh.newhaven.edu" target="_blank">Email</a>.</p>
     </footer>
 
     <!-- "Go to Top" Button -->
-
-    <a href="#top" class="go-to-top">Go to Top</a>
-
+    <a href="#top-anchor" class="go-to-top">Go to Top</a>
 </body>
 </html>
