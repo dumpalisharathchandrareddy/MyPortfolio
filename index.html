@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharath Chandra Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style grid.css">
 </head>
 <body>
 
-    <!-- Go to Top button which references to the top of the page -->
-    <a id="top-anchor"></a>
-
     <!-- Header Section -->
     <header>
-        <div class="page-wrapper">
-            <div class="portfolio-header">Sharath Chandra's Portfolio</div>
-            <nav>
-                <ul>
-                    <li><a href="#about-me-section">About Me</a></li>
-                    <li><a href="#skills-section">Skills</a></li>
-                    <li><a href="#project-section">Projects</a></li>
-                    <li><a href="#certifications-section">Certifications</a></li>
-                    <li><a href="#experience-section">Experience</a></li>
-                    <li><a href="#education-section-class">Education</a></li>
-                    <li><a href="#blogs-section">Blogs</a></li>
-                    <li><a href="#contact-section">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+
+    <!-- Go to Top button which references to the top of the page -->
+        <a id="top-anchor"></a>
+            <div class="page-wrapper" id="page-wrapper">
+                <div class="portfolio-header">Sharath Chandra's Portfolio</div>
+                <nav>
+                    <ul>
+                        <li><a href="#about-me-section">About Me</a></li>
+                        <li><a href="#skills-section">Skills</a></li>
+                        <li><a href="#project-section-class">Projects</a></li>
+                        <li><a href="#certifications-section">Certifications</a></li>
+                        <li><a href="#experience-section">Experience</a></li>
+                        <li><a href="#education-section-class">Education</a></li>
+                        <li><a href="#blogs-section">Blogs</a></li>
+                        <li><a href="#contact-section">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
     </header>
 
     <!-- Main Section which highlights my profile and it takes to Github to explore My projects -->
@@ -40,40 +40,40 @@
     </section>
 
     <!-- About and Skills Section -->
-    <section class="about-skills-section">
-        <div class="about-section" id="about-me-section">
-            <h2>About Me</h2>
-            <img src="images/profile.jpg" alt="Profile Picture">
-            <h3>Sharath Chandra Reddy Dumpali</h3>
-            <p>I am a Computer Science Engineer with experience in machine learning and mobile app development.</p>
-        </div>
-        <div class="skills-section" id="skills-section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>Machine Learning</li>
-                <li>Flutter</li>
-                <li>MySQL</li>
-                <li>HTML & CSS</li>
-            </ul>
-        </div>
+    <section class="about-skills-section" id="about-skills-section">
+            <div class="about-section" id="about-me-section">
+                <h2>About Me</h2>
+                <img src="images/profile.jpg" alt="Profile Picture">
+                <h3>Sharath Chandra Reddy Dumpali</h3>
+                <p>I am a Computer Science Engineer with experience in machine learning and mobile app development.</p>
+            </div>
+            <div class="skills-section" id="skills-section">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>Machine Learning</li>
+                    <li>Flutter</li>
+                    <li>MySQL</li>
+                    <li>HTML & CSS</li>
+                </ul>
+            </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects-section">   
-        <div class="project-section" id="project-section">
+    <section class="projects-section" id="projects-section">   
+        <div class="project-section-class" id="project-section-class">
             <h2>Projects</h2>
-            <div class="project-item">
+            <div class="project-item" id="project-item-1">
                 <img src="images/profile.jpeg" alt="Project 1">
                 <h3>Task Reminder Application</h3>
                 <p>Designed and developed a task reminder application using Flutter.</p>
             </div>
-            <div class="project-item">
+            <div class="project-item" id="project-item-2">
                 <img src="images/profile.jpeg" alt="Project 2">
                 <h3>Human Activity Recognition</h3>
                 <p>Used machine learning techniques to recognize human activity via smartphone sensors.</p>
             </div>
-            <div class="project-item">
+            <div class="project-item" id="project-item-3">
                 <img src="images/profile.jpeg" alt="Project 3">
                 <h3>Weather Forecast App</h3>
                 <p>Developed a cross-platform weather forecast app using Flutter and API integration.</p>
@@ -82,23 +82,25 @@
     </section>
 
     <!-- Certifications and Experience Section -->
-    <section class="certifications-experience-section">
-        <div class="certifications-section" id="certifications-section">
-            <h3>Certifications</h3>
-            <div class="certification-item">
-                <p>Machine Learning Training at SmartBridge</p>
+    <section class="certifications-experience-section" id="certifications-experience-section">
+        <!-- <div class="certifications-experience-section-class" id="certifications-experience-section-class"> -->
+            <div class="certifications-section" id="certifications-section">
+                <h3>Certifications</h3>
+                <div class="certification-item" id="certification-item-1">
+                    <p>Machine Learning Training at SmartBridge</p>
+                </div>
+                <div class="certification-item" id="certification-item-2">
+                    <p>Flutter Development Program</p>
+                </div>
             </div>
-            <div class="certification-item">
-                <p>Flutter Development Program</p>
-            </div>
-        </div>
-        <div class="experience-section" id="experience-section">
-            <h3>Experience</h3>
-            <div class="experience-item">
-                <p>Worked on an E-commerce application project using Flutter at Flipkart Grid.</p>
-            </div>
-            <div class="experience-item">
-                <p>Participated in R-Programming Training at MSME Technology Development Centre.</p>
+            <div class="experience-section" id="experience-section">
+                <h3>Experience</h3>
+                <div class="experience-item" id="experience-item-1">
+                    <p>Worked on an E-commerce application project using Flutter at Flipkart Grid.</p>
+                </div>
+                <div class="experience-item" id="experience-item-2">
+                    <p>Participated in R-Programming Training at MSME Technology Development Centre.</p>
+                </div>
             </div>
         </div>
     </section>
