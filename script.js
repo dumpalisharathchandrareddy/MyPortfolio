@@ -11,7 +11,7 @@
     'full-stack apps',
     'automation tools',
     'REST APIs',
-    'things that ship'
+    'things that run in prod'
   ];
   let wi = 0, ci = 0, deleting = false;
 
