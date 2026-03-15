@@ -25,12 +25,17 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <!-- devicons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%2304040a'/><text y='72' x='12' font-size='68' font-family='monospace' font-weight='900' fill='%230ff0fc'>S</text></svg>" />
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+  <!-- scroll progress bar -->
+  <div id="progress-bar"></div>
 
   <!-- ============================================================
        ANIMATED BACKGROUND
@@ -97,7 +102,7 @@
     <div class="hero-wrap">
       <p class="hero-greet">Hello, I'm</p>
 
-      <h1 class="hero-name">Sharath Chandra<br>Reddy Dumpali</h1>
+      <h1 class="hero-name"><span class="hero-name-l1">Sharath Chandra</span><br><span class="hero-name-l2">Reddy Dumpali</span></h1>
 
       <!-- typing effect — JS cycles through words in the #tt span -->
       <div class="hero-type-line">
@@ -232,73 +237,73 @@
 
         <div class="sk-cat cc fi d1">
           <div class="sk-cat-title">Languages</div>
-          <div class="badges">
-            <span class="badge">Java</span>
-            <span class="badge">Python</span>
-            <span class="badge">JavaScript</span>
-            <span class="badge">TypeScript</span>
-            <span class="badge">Dart</span>
-            <span class="badge">SQL</span>
-            <span class="badge">HTML5</span>
-            <span class="badge">CSS3</span>
+          <div class="badges skill-tiles">
+            <span class="skill-tile"><i class="devicon-java-plain colored"></i><span>Java</span></span>
+            <span class="skill-tile"><i class="devicon-python-plain colored"></i><span>Python</span></span>
+            <span class="skill-tile"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></span>
+            <span class="skill-tile"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></span>
+            <span class="skill-tile"><i class="devicon-dart-plain colored"></i><span>Dart</span></span>
+            <span class="skill-tile no-icon"><span>SQL</span></span>
+            <span class="skill-tile"><i class="devicon-html5-plain colored"></i><span>HTML5</span></span>
+            <span class="skill-tile"><i class="devicon-css3-plain colored"></i><span>CSS3</span></span>
           </div>
         </div>
 
         <div class="sk-cat cp fi d2">
           <div class="sk-cat-title">Backend</div>
-          <div class="badges">
-            <span class="badge">Node.js</span>
-            <span class="badge">Express.js</span>
-            <span class="badge">Spring Boot</span>
-            <span class="badge">REST APIs</span>
-            <span class="badge">Flask</span>
-            <span class="badge">Next.js</span>
-            <span class="badge">Prisma</span>
+          <div class="badges skill-tiles">
+            <span class="skill-tile"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></span>
+            <span class="skill-tile"><i class="devicon-express-original colored"></i><span>Express.js</span></span>
+            <span class="skill-tile"><i class="devicon-spring-plain colored"></i><span>Spring Boot</span></span>
+            <span class="skill-tile no-icon"><span>REST APIs</span></span>
+            <span class="skill-tile"><i class="devicon-flask-original colored"></i><span>Flask</span></span>
+            <span class="skill-tile"><i class="devicon-nextjs-plain colored"></i><span>Next.js</span></span>
+            <span class="skill-tile"><i class="devicon-prisma-original colored"></i><span>Prisma</span></span>
           </div>
         </div>
 
         <div class="sk-cat ck fi d3">
           <div class="sk-cat-title">Frontend</div>
-          <div class="badges">
-            <span class="badge">React.js</span>
-            <span class="badge">Vue.js</span>
-            <span class="badge">Flutter</span>
-            <span class="badge">Bootstrap</span>
-            <span class="badge">Tailwind CSS</span>
-            <span class="badge">shadcn/ui</span>
+          <div class="badges skill-tiles">
+            <span class="skill-tile"><i class="devicon-react-original colored"></i><span>React.js</span></span>
+            <span class="skill-tile"><i class="devicon-vuejs-plain colored"></i><span>Vue.js</span></span>
+            <span class="skill-tile"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></span>
+            <span class="skill-tile no-icon"><span>Bootstrap</span></span>
+            <span class="skill-tile no-icon"><span>Tailwind CSS</span></span>
+            <span class="skill-tile no-icon"><span>shadcn/ui</span></span>
           </div>
         </div>
 
         <div class="sk-cat cc fi d1">
           <div class="sk-cat-title">Databases</div>
-          <div class="badges">
-            <span class="badge">PostgreSQL</span>
-            <span class="badge">MySQL</span>
-            <span class="badge">MongoDB</span>
-            <span class="badge">Firebase</span>
+          <div class="badges skill-tiles">
+            <span class="skill-tile"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></span>
+            <span class="skill-tile"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></span>
+            <span class="skill-tile"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></span>
+            <span class="skill-tile"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></span>
           </div>
         </div>
 
         <div class="sk-cat cp fi d2">
           <div class="sk-cat-title">Cloud &amp; DevOps</div>
-          <div class="badges">
-            <span class="badge">Docker</span>
-            <span class="badge">GitHub Actions</span>
-            <span class="badge">Railway</span>
-            <span class="badge">Render</span>
-            <span class="badge">Linux</span>
-            <span class="badge">CI/CD</span>
+          <div class="badges skill-tiles">
+            <span class="skill-tile"><i class="devicon-docker-plain colored"></i><span>Docker</span></span>
+            <span class="skill-tile no-icon"><span>GitHub Actions</span></span>
+            <span class="skill-tile no-icon"><span>Railway</span></span>
+            <span class="skill-tile no-icon"><span>Render</span></span>
+            <span class="skill-tile"><i class="devicon-linux-plain colored"></i><span>Linux</span></span>
+            <span class="skill-tile no-icon"><span>CI/CD</span></span>
           </div>
         </div>
 
         <div class="sk-cat ck fi d3">
           <div class="sk-cat-title">Tools</div>
-          <div class="badges">
-            <span class="badge">Git</span>
-            <span class="badge">Postman</span>
-            <span class="badge">VS Code</span>
-            <span class="badge">Scikit-Learn</span>
-            <span class="badge">Chrome DevTools</span>
+          <div class="badges skill-tiles">
+            <span class="skill-tile"><i class="devicon-git-plain colored"></i><span>Git</span></span>
+            <span class="skill-tile no-icon"><span>Postman</span></span>
+            <span class="skill-tile no-icon"><span>VS Code</span></span>
+            <span class="skill-tile no-icon"><span>Scikit-Learn</span></span>
+            <span class="skill-tile no-icon"><span>Chrome DevTools</span></span>
           </div>
         </div>
 
@@ -321,7 +326,7 @@
       <div class="proj-grid">
 
         <!-- 01 -->
-        <div class="pcard fi d1">
+        <div class="pcard fi d1 cat-prod">
           <div class="pcard-cat cat-prod">Production System</div>
           <h3 class="pcard-title">Community Server Automation Bot</h3>
           <div class="tech-row">
@@ -342,7 +347,7 @@
         </div>
 
         <!-- 02 -->
-        <div class="pcard fi d2">
+        <div class="pcard fi d2 cat-prod">
           <div class="pcard-cat cat-prod">Backend / Analytics</div>
           <h3 class="pcard-title">User Activity Analytics Backend</h3>
           <div class="tech-row">
@@ -363,8 +368,8 @@
         </div>
 
         <!-- 03 -->
-        <div class="pcard fi d3">
-          <div class="pcard-cat cat-research">ML Research</div>
+        <div class="pcard fi d3 cat-ml">
+          <div class="pcard-cat cat-ml">ML Research</div>
           <h3 class="pcard-title">Human Activity Recognition</h3>
           <div class="tech-row">
             <span class="tbadge">Python</span>
@@ -384,8 +389,8 @@
         </div>
 
         <!-- 04 -->
-        <div class="pcard fi d1">
-          <div class="pcard-cat cat-prod">Full-Stack</div>
+        <div class="pcard fi d1 cat-fs">
+          <div class="pcard-cat cat-fs">Full-Stack</div>
           <h3 class="pcard-title">Portfolio Platform</h3>
           <div class="tech-row">
             <span class="tbadge">Next.js 14</span>
@@ -406,8 +411,8 @@
         </div>
 
         <!-- 05 -->
-        <div class="pcard fi d2">
-          <div class="pcard-cat cat-prod">FinTech Extension</div>
+        <div class="pcard fi d2 cat-fin">
+          <div class="pcard-cat cat-fin">FinTech Extension</div>
           <h3 class="pcard-title">Capital One Eno Browser Extension</h3>
           <div class="tech-row">
             <span class="tbadge">JavaScript</span>
@@ -426,8 +431,8 @@
         </div>
 
         <!-- 06 -->
-        <div class="pcard fi d3">
-          <div class="pcard-cat cat-prod">Mobile and Web App</div>
+        <div class="pcard fi d3 cat-mob">
+          <div class="pcard-cat cat-mob">Mobile and Web App</div>
           <h3 class="pcard-title">E-Commerce Mobile App</h3>
           <div class="tech-row">
             <span class="tbadge">Flutter</span>
@@ -626,6 +631,15 @@
 
   <!-- scroll-to-top button — visibility controlled by script.js -->
   <a href="#hero" id="st">↑</a>
+
+  <!-- mobile bottom nav -->
+  <nav id="mob-nav">
+    <a href="#about" class="mbn-item" data-sec="about"><span class="mbn-icon">◈</span><span class="mbn-lbl">About</span></a>
+    <a href="#skills" class="mbn-item" data-sec="skills"><span class="mbn-icon">⬡</span><span class="mbn-lbl">Skills</span></a>
+    <a href="#projects" class="mbn-item" data-sec="projects"><span class="mbn-icon">◇</span><span class="mbn-lbl">Projects</span></a>
+    <a href="#stats" class="mbn-item" data-sec="stats"><span class="mbn-icon">▣</span><span class="mbn-lbl">Stats</span></a>
+    <a href="#contact" class="mbn-item" data-sec="contact"><span class="mbn-icon">✉</span><span class="mbn-lbl">Contact</span></a>
+  </nav>
 
   <script src="script.js"></script>
 
