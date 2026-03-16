@@ -4,28 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- primary meta -->
   <meta name="description"
     content="Software Engineer building backend systems handling 500+ users, ML research submitted for conference publication, and full-stack products deployed end to end." />
-
   <meta property="og:title" content="Sharath Chandra Reddy — Software Engineer · Backend & AI/ML" />
   <meta property="og:description"
     content="Backend systems handling 500+ concurrent users, ML research submitted for conference publication, full-stack top to bottom. M.S. CS — University of New Haven." />
   <meta property="og:image" content="https://dumpalisharathchandrareddy.github.io/MyPortfolio/og-image.png" />
-
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sharath Chandra Reddy — Software Engineer · Backend & AI/ML" />
   <meta name="twitter:description"
     content="Backend systems handling 500+ concurrent users, ML research submitted for conference publication, full-stack top to bottom. M.S. CS — University of New Haven." />
   <meta name="twitter:image" content="https://dumpalisharathchandrareddy.github.io/MyPortfolio/og-image.png" />
-  <title>Sharath Chandra Reddy — Full-Stack Engineer · Backend & AI/ML</title>
-
-  <!-- fonts: Orbitron for headings, JetBrains Mono for code/labels, Sora for body -->
+  <title>Sharath Chandra Reddy — Software Engineer · Backend & AI/ML</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
-  <!-- devicons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%2304040a'/><text y='72' x='12' font-size='68' font-family='monospace' font-weight='900' fill='%230ff0fc'>S</text></svg>" />
@@ -34,50 +29,28 @@
 
 <body>
 
-  <!-- scroll progress bar -->
   <div id="progress-bar"></div>
 
-  <!-- ============================================================
-       ANIMATED BACKGROUND
-       Three fixed layers stacked behind all page content:
-         1. #bg-grid   — drifting diagonal neon grid (CSS animation)
-         2. #bg-orbs   — slow-floating blurred colour blobs (CSS keyframes)
-         3. #bg-grain  — film-grain noise overlay (SVG feTurbulence)
-       All pointer-events: none so they never block clicks.
-       ============================================================ -->
   <div id="bg">
-
-    <!-- layer 1: grid -->
-    <div id="bg-grid"></div>
-
-    <!-- layer 2: colour orbs -->
-    <div id="bg-orbs">
-      <div class="orb" id="orb1"></div>
-      <div class="orb" id="orb2"></div>
-      <div class="orb" id="orb3"></div>
-      <div class="orb" id="orb4"></div>
+    <canvas id="bg-canvas"></canvas>
+    <div id="bg-aurora">
+      <div class="aband ab1"></div>
+      <div class="aband ab2"></div>
+      <div class="aband ab3"></div>
     </div>
-
-    <!-- layer 3: grain texture via SVG noise filter -->
     <svg id="bg-grain" xmlns="http://www.w3.org/2000/svg">
       <filter id="noise">
         <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="4" stitchTiles="stitch" />
       </filter>
       <rect width="100%" height="100%" filter="url(#noise)" />
     </svg>
-
   </div>
 
+  <canvas id="bubble-canvas"></canvas>
 
-  <!-- ============================================================
-       NAV
-       Transparent at top, gets a glass background once you scroll.
-       Active section is highlighted via IntersectionObserver in JS.
-       ============================================================ -->
   <nav id="nav">
     <div class="nav-c">
       <a class="nav-logo" href="#hero">SCD_</a>
-
       <ul class="nav-links" id="nl">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -86,42 +59,32 @@
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-
-      <!-- hamburger — visible on mobile only -->
       <button class="hbg" id="hbg" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-
-  <!-- ============================================================
-       HERO
-       ============================================================ -->
   <section id="hero">
     <div class="hero-wrap">
       <p class="hero-greet">Hello, I'm</p>
-
-      <h1 class="hero-name"><span class="hero-name-l1">Sharath Chandra</span><br><span class="hero-name-l2">Reddy Dumpali</span></h1>
-
-      <!-- typing effect — JS cycles through words in the #tt span -->
+      <h1 class="hero-name">
+        <span class="hero-name-l1">Sharath Chandra</span>
+        <span class="hero-name-l2">Reddy Dumpali</span>
+      </h1>
       <div class="hero-type-line">
         I write <span class="hero-type-text" id="tt"></span><span class="tcursor"></span>
       </div>
-
       <p class="hero-sub">
         Software I've built runs in production for 500+ people.
         Backend systems, ML research submitted for conference publication,
-        automation that turned hours of manual work into nothing —
-        full-stack top to bottom.
+        automation that turned hours of manual work into nothing — full-stack top to bottom.
       </p>
-
+      <div class="hero-rule"></div>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-p">View My Work</a>
         <a href="#contact" class="btn btn-s">Get In Touch</a>
       </div>
-
-      <!-- social icon buttons — SVG logos, colour-coded, CSS tooltip on hover -->
       <div class="hero-socials">
         <a href="https://github.com/dumpalisharathchandrareddy" target="_blank" rel="noopener" class="hsoc hsoc-gh"
           data-label="GitHub">
@@ -145,8 +108,6 @@
         </a>
       </div>
     </div>
-
-    <!-- bouncing scroll hint -->
     <div class="scroll-dots">
       <div class="sdot"></div>
       <div class="sdot"></div>
@@ -154,21 +115,14 @@
     </div>
   </section>
 
-
-  <!-- ============================================================
-       ABOUT
-       ============================================================ -->
   <section id="about">
     <div class="container">
-
       <h2 class="sec-title fi">About Me</h2>
-      <p class="sec-sub   fi d1">who I am</p>
-
+      <p class="sec-sub fi d1">who I am</p>
       <div class="about-grid">
-
-        <!-- photo + quick links -->
         <div class="about-vis fil">
-          <img src="images/profile.jpg" alt="Sharath Chandra Reddy Dumpali" class="about-avatar">
+          <img src="images/profile.jpg" alt="Sharath Chandra Reddy Dumpali" class="about-avatar" loading="lazy"
+            decoding="async">
           <div class="about-ext">
             <a href="https://github.com/dumpalisharathchandrareddy" target="_blank" rel="noopener" class="alink">GitHub
               ↗</a>
@@ -177,25 +131,15 @@
             <a href="mailto:csharath301@protonmail.com" class="alink">Email ↗</a>
           </div>
         </div>
-
-        <!-- bio text -->
         <div class="fir">
           <p class="about-tag">Software Engineer</p>
           <h2 class="about-n">Sharath Chandra<br>Reddy Dumpali</h2>
           <p class="about-role">// Backend · Full-Stack · Automation</p>
-
-          <p class="about-bio">
-            I write software that real people use. Backend systems handling 500+
-            concurrent users, ML research submitted for conference publication,
-            automation that turned hours of manual work into nothing — full-stack
-            top to bottom.
-          </p>
-          <p class="about-bio">
-            Finished my M.S. in Computer Science at University of New Haven while
-            building and deploying across backend, web, and mobile. I don't
-            prototype — I write production code that holds up.
-          </p>
-
+          <p class="about-bio">I write software that real people use. Backend systems handling 500+ concurrent users, ML
+            research submitted for conference publication, automation that turned hours of manual work into nothing —
+            full-stack top to bottom.</p>
+          <p class="about-bio">Finished my M.S. in Computer Science at University of New Haven while building and
+            deploying across backend, web, and mobile. I don't prototype — I write production code that holds up.</p>
           <div class="about-dets">
             <div>
               <div class="adet-label">Location</div>
@@ -203,9 +147,7 @@
             </div>
             <div>
               <div class="adet-label">Email</div>
-              <div class="adet-val">
-                <a href="mailto:csharath301@protonmail.com">csharath301@protonmail.com</a>
-              </div>
+              <div class="adet-val"><a href="mailto:csharath301@protonmail.com">csharath301@protonmail.com</a></div>
             </div>
             <div>
               <div class="adet-label">Phone</div>
@@ -217,24 +159,15 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ============================================================
-       SKILLS
-       Grouped by category, each card a different accent colour.
-       ============================================================ -->
   <section id="skills">
     <div class="container">
-
       <h2 class="sec-title fi">Technical Skills</h2>
-      <p class="sec-sub   fi d1">tools &amp; tech</p>
-
+      <p class="sec-sub fi d1">tools &amp; tech</p>
       <div class="skills-grid">
-
         <div class="sk-cat cc fi d1">
           <div class="sk-cat-title">Languages</div>
           <div class="badges skill-tiles">
@@ -248,7 +181,6 @@
             <span class="skill-tile"><i class="devicon-css3-plain colored"></i><span>CSS3</span></span>
           </div>
         </div>
-
         <div class="sk-cat cp fi d2">
           <div class="sk-cat-title">Backend</div>
           <div class="badges skill-tiles">
@@ -261,7 +193,6 @@
             <span class="skill-tile"><i class="devicon-prisma-original colored"></i><span>Prisma</span></span>
           </div>
         </div>
-
         <div class="sk-cat ck fi d3">
           <div class="sk-cat-title">Frontend</div>
           <div class="badges skill-tiles">
@@ -273,7 +204,6 @@
             <span class="skill-tile no-icon"><span>shadcn/ui</span></span>
           </div>
         </div>
-
         <div class="sk-cat cc fi d1">
           <div class="sk-cat-title">Databases</div>
           <div class="badges skill-tiles">
@@ -283,7 +213,6 @@
             <span class="skill-tile"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></span>
           </div>
         </div>
-
         <div class="sk-cat cp fi d2">
           <div class="sk-cat-title">Cloud &amp; DevOps</div>
           <div class="badges skill-tiles">
@@ -295,7 +224,6 @@
             <span class="skill-tile no-icon"><span>CI/CD</span></span>
           </div>
         </div>
-
         <div class="sk-cat ck fi d3">
           <div class="sk-cat-title">Tools</div>
           <div class="badges skill-tiles">
@@ -306,147 +234,99 @@
             <span class="skill-tile no-icon"><span>Chrome DevTools</span></span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ============================================================
-       PROJECTS
-       6 cards — each has a number, title, tech badges,
-       3 bullet points, and a GitHub link.
-       ============================================================ -->
   <section id="projects">
     <div class="container">
-
       <h2 class="sec-title fi">Projects</h2>
-      <p class="sec-sub   fi d1">things I've built and deployed</p>
-
+      <p class="sec-sub fi d1">things I've built and deployed</p>
       <div class="proj-grid">
 
-        <!-- 01 -->
         <div class="pcard fi d1 cat-prod">
           <div class="pcard-cat cat-prod">Production System</div>
           <h3 class="pcard-title">Community Server Automation Bot</h3>
-          <div class="tech-row">
-            <span class="tbadge">Node.js</span>
-            <span class="tbadge">PostgreSQL</span>
-            <span class="tbadge">REST APIs</span>
-            <span class="tbadge">Discord.js</span>
-          </div>
+          <div class="tech-row"><span class="tbadge">Node.js</span><span class="tbadge">PostgreSQL</span><span
+              class="tbadge">REST APIs</span><span class="tbadge">Discord.js</span></div>
           <ul class="pach">
             <li>Runs in production for 500+ users, 24/7, with zero-downtime deploys</li>
             <li>Cut 90% of manual admin work — things that used to take hours now just happen</li>
             <li>PostgreSQL backend with tuned queries for real-time community data</li>
           </ul>
-          <div class="pcard-foot">
-            <a href="https://github.com/dumpalisharathchandrareddy/116-bot-discord" target="_blank" rel="noopener"
-              class="btn btn-s btn-sm">GitHub ↗</a>
-          </div>
+          <div class="pcard-foot"><a href="https://github.com/dumpalisharathchandrareddy/116-bot-discord"
+              target="_blank" rel="noopener" class="btn btn-s btn-sm">GitHub ↗</a></div>
         </div>
 
-        <!-- 02 -->
         <div class="pcard fi d2 cat-prod">
           <div class="pcard-cat cat-prod">Backend / Analytics</div>
           <h3 class="pcard-title">User Activity Analytics Backend</h3>
-          <div class="tech-row">
-            <span class="tbadge">Node.js</span>
-            <span class="tbadge">PostgreSQL</span>
-            <span class="tbadge">API Services</span>
-            <span class="tbadge">Cron Jobs</span>
-          </div>
+          <div class="tech-row"><span class="tbadge">Node.js</span><span class="tbadge">PostgreSQL</span><span
+              class="tbadge">API Services</span><span class="tbadge">Cron Jobs</span></div>
           <ul class="pach">
             <li>Got API response times down 40%+ through query rewrites and caching</li>
             <li>Scheduled jobs aggregate data automatically — dashboards always up to date</li>
             <li>Modular service design made it easy to add features without breaking existing consumers</li>
           </ul>
-          <div class="pcard-foot">
-            <a href="https://github.com/dumpalisharathchandrareddy/116-info-bot" target="_blank" rel="noopener"
-              class="btn btn-s btn-sm">GitHub ↗</a>
-          </div>
+          <div class="pcard-foot"><a href="https://github.com/dumpalisharathchandrareddy/116-info-bot" target="_blank"
+              rel="noopener" class="btn btn-s btn-sm">GitHub ↗</a></div>
         </div>
 
-        <!-- 03 -->
         <div class="pcard fi d3 cat-ml">
           <div class="pcard-cat cat-ml">ML Research</div>
           <h3 class="pcard-title">Human Activity Recognition</h3>
-          <div class="tech-row">
-            <span class="tbadge">Python</span>
-            <span class="tbadge">Scikit-Learn</span>
-            <span class="tbadge">Flask</span>
-            <span class="tbadge">ML Research</span>
-          </div>
+          <div class="tech-row"><span class="tbadge">Python</span><span class="tbadge">Scikit-Learn</span><span
+              class="tbadge">Flask</span><span class="tbadge">ML Research</span></div>
           <ul class="pach">
             <li>Tested 15 ML models on smartphone sensor data — best precision hit 0.9682</li>
             <li>Results submitted for conference publication — HAR research, University of New Haven</li>
             <li>Flask API classifies activity in real time from raw accelerometer and gyroscope data</li>
           </ul>
-          <div class="pcard-foot">
-            <a href="https://github.com/dumpalisharathchandrareddy/Human-Activity-Recognition-main" target="_blank"
-              rel="noopener" class="btn btn-s btn-sm">GitHub ↗</a>
-          </div>
+          <div class="pcard-foot"><a
+              href="https://github.com/dumpalisharathchandrareddy/Human-Activity-Recognition-main" target="_blank"
+              rel="noopener" class="btn btn-s btn-sm">GitHub ↗</a></div>
         </div>
 
-        <!-- 04 -->
         <div class="pcard fi d1 cat-fs">
           <div class="pcard-cat cat-fs">Full-Stack</div>
           <h3 class="pcard-title">Portfolio Platform</h3>
-          <div class="tech-row">
-            <span class="tbadge">Next.js 14</span>
-            <span class="tbadge">TypeScript</span>
-            <span class="tbadge">Prisma</span>
-            <span class="tbadge">Tailwind CSS</span>
-            <span class="tbadge">shadcn/ui</span>
+          <div class="tech-row"><span class="tbadge">Next.js 14</span><span class="tbadge">TypeScript</span><span
+              class="tbadge">Prisma</span><span class="tbadge">Tailwind CSS</span><span class="tbadge">shadcn/ui</span>
           </div>
           <ul class="pach">
             <li>Full-stack app using Next.js 14 App Router with SSR for fast loads and good SEO</li>
             <li>Prisma ORM keeps the whole data layer type-safe end-to-end in TypeScript</li>
             <li>Component system built on shadcn/ui — clean, consistent, easy to change</li>
           </ul>
-          <div class="pcard-foot">
-            <a href="https://github.com/dumpalisharathchandrareddy/portfolio-platform" target="_blank" rel="noopener"
-              class="btn btn-s btn-sm">GitHub ↗</a>
-          </div>
+          <div class="pcard-foot"><a href="https://github.com/dumpalisharathchandrareddy/portfolio-platform"
+              target="_blank" rel="noopener" class="btn btn-s btn-sm">GitHub ↗</a></div>
         </div>
 
-        <!-- 05 -->
         <div class="pcard fi d2 cat-fin">
           <div class="pcard-cat cat-fin">FinTech Extension</div>
           <h3 class="pcard-title">Capital One Eno Browser Extension</h3>
-          <div class="tech-row">
-            <span class="tbadge">JavaScript</span>
-            <span class="tbadge">Chrome Extension APIs</span>
-            <span class="tbadge">Manifest V3</span>
-          </div>
+          <div class="tech-row"><span class="tbadge">JavaScript</span><span class="tbadge">Chrome Extension
+              APIs</span><span class="tbadge">Manifest V3</span></div>
           <ul class="pach">
             <li>Adds custom UI on top of Capital One's Eno assistant using Chrome MV3</li>
             <li>Content scripts inject into the page without breaking anything that's already there</li>
             <li>Background service worker and content scripts stay in sync through a simple message bus</li>
           </ul>
-          <div class="pcard-foot">
-            <a href="https://github.com/dumpalisharathchandrareddy/116-Cap-One-Eno-Extension-main" target="_blank"
-              rel="noopener" class="btn btn-s btn-sm">GitHub ↗</a>
-          </div>
+          <div class="pcard-foot"><a href="https://github.com/dumpalisharathchandrareddy/116-Cap-One-Eno-Extension-main"
+              target="_blank" rel="noopener" class="btn btn-s btn-sm">GitHub ↗</a></div>
         </div>
 
-        <!-- 06 -->
         <div class="pcard fi d3 cat-mob">
-          <div class="pcard-cat cat-mob">Mobile and Web App</div>
+          <div class="pcard-cat cat-mob">Mobile &amp; Web App</div>
           <h3 class="pcard-title">E-Commerce Mobile App</h3>
-          <div class="tech-row">
-            <span class="tbadge">Flutter</span>
-            <span class="tbadge">Dart</span>
-            <span class="tbadge">REST APIs</span>
-            <span class="tbadge">Firebase</span>
-          </div>
+          <div class="tech-row"><span class="tbadge">Flutter</span><span class="tbadge">Dart</span><span
+              class="tbadge">REST APIs</span><span class="tbadge">Firebase</span></div>
           <ul class="pach">
             <li>Runs on Android and iOS from a single codebase — real-time inventory, checkout included</li>
             <li>Flipkart Grid certified — reviewed and recognised for production-quality mobile work</li>
             <li>Firebase handles real-time sync, push notifications, and offline reads across both platforms</li>
           </ul>
-          <div class="pcard-foot">
-            <span class="btn btn-g btn-sm" style="cursor: default">Flipkart Grid Certified ✓</span>
+          <div class="pcard-foot"><span class="btn btn-g btn-sm" style="cursor:default">Flipkart Grid Certified ✓</span>
           </div>
         </div>
 
@@ -454,52 +334,30 @@
     </div>
   </section>
 
-
-  <!-- ============================================================
-       STATS
-       Numbers count up when the section scrolls into view (JS).
-       ============================================================ -->
-  <section id="stats">
-    <div class="container">
-
-      <h2 class="sec-title fi">By The Numbers</h2>
-      <p class="sec-sub   fi d1">what the work added up to</p>
-
-      <!-- data-target and data-suffix are read by the counter script -->
-      <div class="stats-grid fi d2">
-        <div class="scard">
-          <div class="snum" data-target="500" data-suffix="+">0</div>
-          <div class="slbl">Users in Production</div>
-        </div>
-        <div class="scard">
-          <div class="snum" data-target="10" data-suffix="+">0</div>
-          <div class="slbl">Apps Deployed</div>
-        </div>
-        <div class="scard">
-          <div class="snum" data-target="40" data-suffix="%+">0</div>
-          <div class="slbl">API Speed Gain</div>
-        </div>
-        <div class="scard">
-          <div class="snum" data-target="90" data-suffix="%">0</div>
-          <div class="slbl">Admin Work Automated</div>
+  <div class="stats-sticky-wrap">
+    <section id="stats">
+      <div class="container">
+        <h2 class="sec-title fi">By The Numbers</h2>
+        <p class="sec-sub fi d1">what the work added up to</p>
+        <div class="stats-spec fi d2">
+          <div class="spec-row scard"><span class="spec-num snum" data-target="500" data-suffix="+">0</span><span
+              class="spec-label slbl">Users running on systems I built — right now, in production</span></div>
+          <div class="spec-row scard"><span class="spec-num snum" data-target="10" data-suffix="+">0</span><span
+              class="spec-label slbl">Production apps deployed end to end</span></div>
+          <div class="spec-row scard"><span class="spec-num snum" data-target="40" data-suffix="%+">0</span><span
+              class="spec-label slbl">API response time improvement through query rewrites and caching</span></div>
+          <div class="spec-row scard"><span class="spec-num snum" data-target="90" data-suffix="%">0</span><span
+              class="spec-label slbl">Of manual admin work replaced with automation</span></div>
         </div>
       </div>
+    </section>
+  </div>
 
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       EDUCATION
-       ============================================================ -->
   <section id="education">
     <div class="container">
-
       <h2 class="sec-title fi">Education</h2>
-      <p class="sec-sub   fi d1">academic background</p>
-
+      <p class="sec-sub fi d1">academic background</p>
       <div class="edu-line">
-
         <div class="edu-item fi d1">
           <div class="edu-dot"></div>
           <div class="edu-card">
@@ -509,7 +367,6 @@
             <p class="edu-loc">West Haven, CT, USA</p>
           </div>
         </div>
-
         <div class="edu-item fi d2">
           <div class="edu-dot"></div>
           <div class="edu-card">
@@ -519,40 +376,25 @@
             <p class="edu-loc">Chennai, Tamil Nadu, India</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ============================================================
-       CONTACT
-       Form submits via mailto — no backend, no server.
-       JS in script.js assembles the mailto URL on submit.
-       ============================================================ -->
   <section id="contact">
     <div class="container">
-
       <h2 class="sec-title fi">Get In Touch</h2>
-      <p class="sec-sub   fi d1">let's talk</p>
-
+      <p class="sec-sub fi d1">let's talk</p>
       <div class="contact-layout">
-
-        <!-- contact info -->
         <div class="ci fil">
           <h3>Say hello.</h3>
-          <p>
-            Open to new projects, interesting engineering problems, and good
-            collaborations. Drop me a line — I read everything.
-          </p>
+          <p>Open to new projects, interesting engineering problems, and good collaborations. Drop me a line — I read
+            everything.</p>
           <div class="citems">
             <div class="citem">
               <div class="cicon">📧</div>
               <div>
                 <div class="ctext-lbl">Email</div>
-                <div class="ctext-val">
-                  <a href="mailto:csharath301@protonmail.com">csharath301@protonmail.com</a>
-                </div>
+                <div class="ctext-val"><a href="mailto:csharath301@protonmail.com">csharath301@protonmail.com</a></div>
               </div>
             </div>
             <div class="citem">
@@ -566,60 +408,41 @@
               <div class="cicon">💼</div>
               <div>
                 <div class="ctext-lbl">LinkedIn</div>
-                <div class="ctext-val">
-                  <a href="https://www.linkedin.com/in/dumpalisharathchandrareddy" target="_blank"
-                    rel="noopener">dumpalisharathchandrareddy ↗</a>
-                </div>
+                <div class="ctext-val"><a href="https://www.linkedin.com/in/dumpalisharathchandrareddy" target="_blank"
+                    rel="noopener">dumpalisharathchandrareddy ↗</a></div>
               </div>
             </div>
             <div class="citem">
               <div class="cicon">⌨️</div>
               <div>
                 <div class="ctext-lbl">GitHub</div>
-                <div class="ctext-val">
-                  <a href="https://github.com/dumpalisharathchandrareddy" target="_blank"
-                    rel="noopener">dumpalisharathchandrareddy ↗</a>
-                </div>
+                <div class="ctext-val"><a href="https://github.com/dumpalisharathchandrareddy" target="_blank"
+                    rel="noopener">dumpalisharathchandrareddy ↗</a></div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- form — JS handles the submit event -->
         <div class="cform fir">
           <form id="cf">
-            <div class="fg">
-              <label class="flbl" for="cn">Your Name</label>
-              <input type="text" id="cn" class="finp" placeholder="Jane Smith" required>
-            </div>
-            <div class="fg">
-              <label class="flbl" for="ce">Email</label>
-              <input type="email" id="ce" class="finp" placeholder="jane@example.com" required>
-            </div>
-            <div class="fg">
-              <label class="flbl" for="cs">Subject</label>
-              <input type="text" id="cs" class="finp" placeholder="Project, question, idea...">
-            </div>
-            <div class="fg">
-              <label class="flbl" for="cm">Message</label>
-              <textarea id="cm" class="ftxt" placeholder="What's on your mind?" required></textarea>
-            </div>
-            <button type="submit" class="fsub">Send Message →</button>
+            <div class="fg"><label class="flbl" for="cn">Your Name</label><input type="text" id="cn" class="finp"
+                placeholder="Jane Smith" required></div>
+            <div class="fg"><label class="flbl" for="ce">Email</label><input type="email" id="ce" class="finp"
+                placeholder="jane@example.com" required></div>
+            <div class="fg"><label class="flbl" for="cs">Subject</label><input type="text" id="cs" class="finp"
+                placeholder="Project, question, idea..."></div>
+            <div class="fg"><label class="flbl" for="cm">Message</label><textarea id="cm" class="ftxt"
+                placeholder="What's on your mind?" required></textarea></div>
+            <button type="submit" class="fsub">Send Message &rarr;</button>
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
   <footer>
     <div class="foot-inner">
       <span class="foot-brand">SCD_</span>
-      <span class="foot-copy">© 2025 Sharath Chandra Reddy Dumpali</span>
+      <span class="foot-copy">&copy; 2025 Sharath Chandra Reddy Dumpali</span>
       <div class="foot-links">
         <a href="https://github.com/dumpalisharathchandrareddy" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/dumpalisharathchandrareddy" target="_blank" rel="noopener">LinkedIn</a>
@@ -628,21 +451,22 @@
     </div>
   </footer>
 
+  <a href="#hero" id="st">&#8593;</a>
 
-  <!-- scroll-to-top button — visibility controlled by script.js -->
-  <a href="#hero" id="st">↑</a>
-
-  <!-- mobile bottom nav -->
   <nav id="mob-nav">
-    <a href="#about" class="mbn-item" data-sec="about"><span class="mbn-icon">◈</span><span class="mbn-lbl">About</span></a>
-    <a href="#skills" class="mbn-item" data-sec="skills"><span class="mbn-icon">⬡</span><span class="mbn-lbl">Skills</span></a>
-    <a href="#projects" class="mbn-item" data-sec="projects"><span class="mbn-icon">◇</span><span class="mbn-lbl">Projects</span></a>
-    <a href="#stats" class="mbn-item" data-sec="stats"><span class="mbn-icon">▣</span><span class="mbn-lbl">Stats</span></a>
-    <a href="#contact" class="mbn-item" data-sec="contact"><span class="mbn-icon">✉</span><span class="mbn-lbl">Contact</span></a>
+    <a href="#about" class="mbn-item" data-sec="about"> <span class="mbn-icon">&#9672;</span><span
+        class="mbn-lbl">About</span></a>
+    <a href="#skills" class="mbn-item" data-sec="skills"> <span class="mbn-icon">&#11041;</span><span
+        class="mbn-lbl">Skills</span></a>
+    <a href="#projects" class="mbn-item" data-sec="projects"><span class="mbn-icon">&#9671;</span><span
+        class="mbn-lbl">Projects</span></a>
+    <a href="#stats" class="mbn-item" data-sec="stats"> <span class="mbn-icon">&#9635;</span><span
+        class="mbn-lbl">Stats</span></a>
+    <a href="#contact" class="mbn-item" data-sec="contact"> <span class="mbn-icon">&#9993;</span><span
+        class="mbn-lbl">Contact</span></a>
   </nav>
 
   <script src="script.js"></script>
-
 </body>
 
 </html>
