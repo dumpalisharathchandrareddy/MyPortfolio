@@ -500,27 +500,27 @@ section:not(#hero) .container {
   position: relative;
 }
 
-/* glowing gradient underline — width driven by JS --ul-w var */
+/* glowing gradient underline */
 .nav-links a::after {
   content: '';
   position: absolute;
   bottom: 2px;
   left: 14px;
-  width: var(--ul-w, 0%);
-  max-width: calc(100% - 28px);
+  width: 0%;
   height: 1px;
   background: linear-gradient(90deg, var(--cyan), var(--purple));
   box-shadow: 0 0 6px rgba(15, 240, 252, 0.7);
   transition: width 0.35s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: calc(100% - 28px);
+}
+
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--text);
-}
-
-.nav-links a.active {
-  --ul-w: calc(100% - 28px);
 }
 
 .hbg {

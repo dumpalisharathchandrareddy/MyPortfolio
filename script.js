@@ -801,19 +801,30 @@ loop();
     nav.classList.toggle('scrolled', window.scrollY > 55);
   }, { passive: true });
 
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        links.forEach(l =>
-          l.classList.toggle('active',
-            l.getAttribute('href') === '#' + entry.target.id
-          )
-        );
-      }
-    });
-  }, { rootMargin: '-38% 0px -38% 0px' });
+  // Always highlight exactly ONE nav link — whichever section
+  // has its top closest to (but still above) 40% down the viewport.
+  const sections = Array.from(document.querySelectorAll('section[id]'));
 
-  document.querySelectorAll('section[id]').forEach(s => io.observe(s));
+  function updateActiveLink() {
+    const scrollY = window.scrollY;
+    const trigger = window.innerHeight * 0.4; // 40% down viewport
+
+    let active = sections[0];
+    for (const sec of sections) {
+      if (sec.getBoundingClientRect().top <= trigger) {
+        active = sec;
+      }
+    }
+
+    links.forEach(l =>
+      l.classList.toggle('active',
+        l.getAttribute('href') === '#' + active.id
+      )
+    );
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink(); // run on load too
 })();
 
 
@@ -1073,23 +1084,6 @@ document.getElementById('cf').addEventListener('submit', function (e) {
   });
 })();
 
-
-/* ============================================================
-   NAV LINK HOVER — sliding underline follows cursor
-   ============================================================ */
-(function () {
-  const links = document.querySelectorAll('.nav-links a');
-  links.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      link.style.setProperty('--ul-w', '100%');
-    });
-    link.addEventListener('mouseleave', () => {
-      if (!link.classList.contains('active')) {
-        link.style.setProperty('--ul-w', '0%');
-      }
-    });
-  });
-})();
 
 
 /* ============================================================
